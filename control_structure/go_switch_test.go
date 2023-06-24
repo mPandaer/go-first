@@ -107,17 +107,17 @@ func TestFallThrough(t *testing.T) {
 // 特有的type switch
 func TestTypeSwitch(t *testing.T) {
 	var i interface{} = 13.6
-	switch i.(type) {
+	switch v := i.(type) {
 	case int:
-		fmt.Println("int type")
+		fmt.Println("int type", v)
 	case string:
-		fmt.Println("string type")
+		fmt.Println("string type", v)
 	case float32:
-		fmt.Println("float32 type")
+		fmt.Println("float32 type", v)
 	case float64:
-		fmt.Println("float64 type")
+		fmt.Println("float64 type", v)
 	default:
-		fmt.Println("other type")
+		fmt.Println("other type", v)
 	}
 }
 
